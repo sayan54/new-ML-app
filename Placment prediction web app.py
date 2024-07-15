@@ -43,11 +43,11 @@ def main():
     
     
     Age = st.number_input('Enter Age',step=1.,format="%d")
-    #Gender = st.selectbox("Your gender",("Male","Female"),index=None, placeholder="Select Gender...",)
-    options = {"Male": 1, "Female": 2}
-    selected_option = st.selectbox("Your gender", list(options.keys()), index=None, placeholder="Select Gender...")
-    selected_value = options[selected_option]
-    outst=st.write("You selected:", selected_value)
+    Gender = st.selectbox("Your gender",("Male","Female"),index=None, placeholder="Select Gender...",)
+    #options = {"Male": 1, "Female": 2}
+    #selected_option = st.selectbox("Your gender", list(options.keys()), index=None, placeholder="Select Gender...")
+    #selected_value = options[selected_option]
+    #outst=st.write("You selected:", selected_value)
  
     Stream = st.number_input('Enter Stream',step=1.,format="%d")
     Internships = st.number_input('Enter number of Internships',step=1.,format="%d")
@@ -63,7 +63,7 @@ def main():
     # creating a button for Prediction
     
     if st.button('Result'):
-        detection = placement_prediction([Age, outst, Stream, Internships, CGPA, Hostel, HistoryOfBacklogs])
+        detection = placement_prediction([Age, Gender, Stream, Internships, CGPA, Hostel, HistoryOfBacklogs])
         
         
     st.success(detection)
